@@ -32,8 +32,6 @@ void execommand(char **argument_v)
 	}
 	else
 	{
-		do {
-			processID = waitpid(processID, &stats, WUNTRACED);
-		} while (!WIFEXITED(stats) && !WIFSIGNALED(stats));
+		wait(&stats);
 	}
 }
