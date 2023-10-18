@@ -8,7 +8,7 @@
 void execommand(char **argument_v)
 {
 	char *cmd = NULL, *actual_cmd = NULL;
-	pid_t processID, wpid;
+	pid_t processID;
 	int stats;
 
 	processID = fork();
