@@ -8,7 +8,7 @@
 void execommand(char **argument_v)
 {
 	char *cmd = NULL, *actual_cmd = NULL;
-	pid_t processID, Wwpid;
+	pid_t processID, wpid;
 	int stats;
 
 	processID = fork();
@@ -33,7 +33,7 @@ void execommand(char **argument_v)
 	else
 	{
 		do {
-			Wwpid = waitpid(processID, &stats, WUNTRACED);
+			processID = waitpid(processID, &stats, WUNTRACED);
 		} while (!WIFEXITED(stats) && !WIFSIGNALED(stats));
 	}
 }
